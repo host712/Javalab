@@ -1,7 +1,5 @@
 #Travel Management System
 
-This is a website for Travel managing and will help you book  for Transports and Hotels.
-
-This will be a great opportunity to take a tour.
-
+This is a site for Travel management and will help you book  Transports and Hotels.
+Please join to check out for the best places in the world😋🤩
 Thank you😊
