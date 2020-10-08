@@ -6,7 +6,7 @@ class tms
 {
 	public static void main(String args[])
 	{
-	System.out.println("Travel management system using Java Programming" );
+		System.out.println("Travel management system using Java Programming" );
     	Scanner sc=new Scanner(System.in); //using scanner package to get user input 
 		int ch=0;
 		do
@@ -109,9 +109,7 @@ class booking
 				int nn=sc.nextInt();
 				switch(nn)
 				{
-					case 1:System.out.println(" ");
-					System.out.println("Flight");
-					System.out.println(" ");
+					case 1:System.out.println("Flight");
 					String[] locations={"1.London","2.Paris","3.Singapore","4.Malaysia","5.Sydney","6.Dubai","7.Iceland","8.Greece","9.England","10.Egypt","11.Brazil","12.Peru",};
 					for(String str : locations)
 					{
@@ -151,17 +149,28 @@ class booking
 						System.out.println("Thank you for booking the Airline, as there was a pandemic in our country we request you to wait for the update of the Journey details");
 					}
 					break;
-					case 2:System.out.println(" ");
-					System.out.println("Hotels");
-					System.out.println(" ");
+					case 2: System.out.println("Hotels");
 					stay st1=new stay("Germany","22/12/20","14/12/20",2,2);
 					st1.display();
 					break;
-					case 3:System.out.println(" ");
-					System.out.println("Car");
-					System.out.println(" ");
+					case 3:System.out.println("Car");
+					System.out.println("1.Car Rental  2.Airport Taxi");
+					int ca=sc.nextInt();
+					switch(ca)
+					{
+					case 1:System.out.println("Car Rental");
 					car_rental c1=new car_rental("Chennai MAR","Vellore","12/12/20","14/12/20");
-						
+					break;
+					case 2:System.out.println("Airport Taxi");
+					airport_taxi.change();
+					airport_taxi at1=new airport_taxi("chennai","ITC Grand","23/10/20","19:30");
+					airport_taxi at2=new airport_taxi("Germany","Grand Downtown","12/10/20","23:15");
+					at1.display();
+					System.out.println(" ");
+					at2.display();
+					break;
+					default:System.out.println("Error 404!");
+					}	
 				}
 				break;
 				case 2:System.out.println("Booking Details");
@@ -251,7 +260,7 @@ class car_rental
 	}
 }
 //*************************************************************************************************************
-class password
+class password_change
 {
 	Scanner sc=new Scanner(System.in);
 	public void password()
@@ -271,5 +280,33 @@ class password
 		}
 		else
 			System.out.println("New Password is same as Current Password");
+	}
+}
+//*************************************************************************************************************
+class airport_taxi
+{
+	String airport_name;
+	String hotel;
+	static int travellers = 1;
+	String flight_arrival;
+	String flight_time;
+	static void change()
+	{
+		travellers=2;
+	}
+	airport_taxi(String an,String h,String fa,String ft)
+	{
+		airport_name=an;
+		hotel=h;
+		flight_arrival=fa;
+		flight_time=ft;
+	}
+	void display()
+	{
+		System.out.println("Airport Name : "+airport_name);
+		System.out.println("Hotel : "+hotel);
+		System.out.println("Travellers : "+travellers);
+		System.out.println("Flight Arrival Date : "+flight_arrival);
+		System.out.println("Flight Arrival Time : "+flight_time);
 	}
 }
